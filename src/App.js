@@ -1,14 +1,18 @@
-import React from 'react';
-import './App.css'
-import HomePage from './components/Header'
-import ImageGallery from './components/FetchData';
+import "./App.css";
+import React from "react";
+import { Header } from "./components/Header";
+import { cssLoader } from "./components/Header";
+import FetchData from "./components/FetchData";
 
+export const userContext = React.createContext();
 
 function App() {
   return (
     <div className="App">
-      <HomePage />
-      <ImageGallery />
+      <Header />
+      <userContext.Provider value={cssLoader}>
+        <FetchData />
+      </userContext.Provider>
     </div>
   );
 }
