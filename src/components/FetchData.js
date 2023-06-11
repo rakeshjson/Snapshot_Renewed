@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createContext, useContext } from "react";
+import React, { useEffect, useState, } from "react";
 import { BrowserRouter, Link } from "react-router-dom";
 import axios from "axios";
 import { userContext } from "../App";
@@ -6,7 +6,7 @@ import { userContext } from "../App";
 function FetchData() {
   const [searchText, setSearchText] = useState("Nature");
   const [images, setImages] = useState([]);
-  const cssLoader = useContext(userContext);
+//   const cssLoader = useContext(userContext);
   // console.log(cssLoader);
 
   useEffect(() => {
@@ -49,7 +49,6 @@ function FetchData() {
             id="search"
             onClick={(e) => {
               setSearchText(document.getElementById("input").value);
-              cssLoader();
             }}
           >
             Search
@@ -64,7 +63,6 @@ function FetchData() {
                 to={"/Mountains"}
                 onClick={() => {
                   setSearchText("Mountains");
-                  cssLoader();
                 }}
               >
                 Mountains
@@ -74,7 +72,6 @@ function FetchData() {
                 to={"/Beaches"}
                 onClick={() => {
                   setSearchText("Beaches");
-                  cssLoader();
                 }}
               >
                 Beaches
@@ -84,7 +81,6 @@ function FetchData() {
                 to={"/Birds"}
                 onClick={() => {
                   setSearchText("Birds");
-                  cssLoader();
                 }}
               >
                 Birds
@@ -94,7 +90,6 @@ function FetchData() {
                 to={"/Food"}
                 onClick={() => {
                   setSearchText("Food");
-                  cssLoader();
                 }}
               >
                 Food
